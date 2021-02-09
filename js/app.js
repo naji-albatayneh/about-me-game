@@ -1,258 +1,116 @@
 'use strict';
 let grade = 0;
+let answer;
 let userName = prompt('Welcome to Guess Me Game! Each level you complete successfully you will get 5 points score. Please enter your NICKNAME to START the game.');
-let answer = prompt('Hello ' + userName +'! We will make your day! The game is just started.. LEVEL ONE: Do i live in Amman? [yes] or [no]');
-if(answer.toLocaleLowerCase()==='no' || answer.toLocaleLowerCase()==='n'){
-  //console.log('Correct answer');
-  grade = grade + 5;
-  answer= prompt('Fantastic ' + userName +'! You have completed level one successfully! Your total score now is ' + grade + ' Points. LEVEL TWO: I am a married man? [yes] or [no]');
-  if(answer.toLocaleLowerCase()==='yes' || answer.toLocaleLowerCase()==='y'){
-    //console.log('Correct answer');
-    grade = grade + 5;
-    answer = prompt('Fantastic ' + userName +'! You have completed level tow successfully! Your total score now is ' + grade + ' Points. LEVEL THREE: Do i have children? [yes] or [no]');
-    if(answer.toLocaleLowerCase()==='yes' || answer.toLocaleLowerCase()==='y'){
-      //console.log('Correct answer');
+let questions = ['Do i live in Amman?', 'I am a married man?', 'Do i have children?', 'Is Julia my daughter\'s name?', 'Do i wear glasses?'];
+//Q1-5
+for(let i = 0; i<questions.length;i++){
+  answer = prompt('Hello ' + userName +'! LEVEL ( ' + (i+1) + ' ): ' + questions[i] + ' [yes] or [no]');
+  if(i===0){
+    switch(answer.toLowerCase()){
+    case 'no':
+    case 'n':
       grade = grade + 5;
-      answer = prompt('Fantastic ' + userName +'! You have completed level three successfully! Your total score now is ' + grade + ' Points. LEVEL FOUR: Is Julia my daughter\'s name? [yes] or [no]');
-      if(answer.toLocaleLowerCase()==='yes' || answer.toLocaleLowerCase()==='y'){
-        //console.log('Correct answer');
-        grade = grade + 5;
-        answer = prompt('Fantastic ' + userName +'! You have completed level four successfully! Your total score now is ' + grade + ' Points. LEVEL FIVE: Do i wear glasses? [yes] or [no]');
-        if(answer.toLocaleLowerCase()==='yes' || answer.toLocaleLowerCase()==='y'){
-          //console.log('Correct answer');
-          grade = grade + 5;
-          alert('Congratulations ' + userName + '! You have completed all the game levels successfully. Your total score is ' + grade + ' Points.');
-        }else{
-          //console.log('Incorrect answer');
-          alert('Well done ' + userName + '! You have completed some of the game levels successfully. Your total score is ' + grade + ' Points.');
-        }
-      }else{
-        answer = prompt('Oops ' + userName +'! You could not completed level four successfully! Your total score now is ' + grade + ' Points. LEVEL FIVE: Do i wear glasses? [yes] or [no]');
-        if(answer.toLocaleLowerCase()==='yes' || answer.toLocaleLowerCase()==='y'){
-          //console.log('Correct answer');
-          grade = grade + 5;
-          alert('Well done ' + userName + '! You have completed some of the game levels successfully. Your total score is ' + grade + ' Points.');
-        }else{
-          //console.log('Incorrect answer');
-          alert('Well done ' + userName + '! You have completed some of the game levels successfully. Your total score is ' + grade + ' Points.');
-        }
-      }
-    }else{
+      alert('Fantastic ' + userName +'! You have completed level ' + (i+1) + ' successfully! Your total score now is ' + grade + ' Points.');
+      //console.log('Correct answer');
+      break;
+
+    case 'yes':
+    case 'y':
+      alert('Oops ' + userName +'! You could not completed level ' + (i+1) + ' successfully! Your total score now is ' + grade + ' Points.');
       //console.log('Incorrect answer');
-      //grade = grade + 5;
-      answer = prompt('Oops ' + userName +'! You could not complete level three successfully! Your total score now is ' + grade + ' Points. LEVEL FOUR: Is Julia my daughter\'s name? [yes] or [no]');
-      if(answer.toLocaleLowerCase()==='yes' || answer.toLocaleLowerCase()==='y'){
-        //console.log('Correct answer');
-        grade = grade + 5;
-        answer = prompt('Fantastic ' + userName +'! You have completed level four successfully! Your total score now is ' + grade + ' Points. LEVEL FIVE: Do i wear glasses? [yes] or [no]');
-        if(answer.toLocaleLowerCase()==='yes' || answer.toLocaleLowerCase()==='y'){
-          //console.log('Correct answer');
-          grade = grade + 5;
-          alert('Well done ' + userName + '! You have completed all the game levels successfully. Your total score is ' + grade + ' Points.');
-        }else{
-          //console.log('Incorrect answer');
-          alert('Good ' + userName + '! You have completed some of the game levels successfully. Your total score is ' + grade + ' Points.');
-        }
-      }else{
-        //L4
-        answer = prompt('Oops ' + userName +'! You could not completed level four successfully! Your total score now is ' + grade + ' Points. LEVEL FIVE: Do i wear glasses? [yes] or [no]');
-        if(answer.toLocaleLowerCase()==='yes' || answer.toLocaleLowerCase()==='y'){
-          //console.log('Correct answer');
-          grade = grade + 5;
-          alert('Well done ' + userName + '! You have completed some of the game levels successfully. Your total score is ' + grade + ' Points.');
-        }else{
-          //console.log('Incorrect answer');
-          alert('Not bad ' + userName + '! You have completed some of the game levels successfully. Your total score is ' + grade + ' Points.');
-        }
-      }
+      break;
+
+    default:
+      alert('Please keep the answer to: \'yes\' or \'no\' or \'y\' or \'n\' only');
     }
   }else{
-    //console.log('Incorrect answer');
-    //grade = grade + 5;
-    answer = prompt('Well ' + userName +'! You could not complete level tow successfully! Your total score now is ' + grade + ' Points. LEVEL THREE: Do i have children? [yes] or [no]');
-    if(answer.toLocaleLowerCase()==='yes' || answer.toLocaleLowerCase()==='y'){
-      //console.log('Correct answer');
+    switch(answer.toLowerCase()){
+    case 'yes':
+    case 'y':
       grade = grade + 5;
-      answer = prompt('Well ' + userName +'! You have completed level three successfully! Your total score now is ' + grade + ' Points. LEVEL FOUR: Is Julia my daughter\'s name? [yes] or [no]');
-      if(answer.toLocaleLowerCase()==='yes' || answer.toLocaleLowerCase()==='y'){
-        //console.log('Correct answer');
-        grade = grade + 5;
-        answer = prompt('Well ' + userName +'! You have completed level four successfully! Your total score now is ' + grade + ' Points. LEVEL FIVE: Do i wear glasses? [yes] or [no]');
-        if(answer.toLocaleLowerCase()==='yes' || answer.toLocaleLowerCase()==='y'){
-          //console.log('Correct answer');
-          grade = grade + 5;
-          alert('Congratulations ' + userName + '! You have completed all the game levels successfully. Your total score is ' + grade + ' Points.');
-        }else{
-          //console.log('Incorrect answer');
-          alert('Well ' + userName + '! You have completed some of the game levels successfully. Your total score is ' + grade + ' Points.');
-        }
-      }else{
-        //L4
-        answer = prompt('Oops ' + userName +'! You could not completed level four successfully! Your total score now is ' + grade + ' Points. LEVEL FIVE: Do i wear glasses? [yes] or [no]');
-        if(answer.toLocaleLowerCase()==='yes' || answer.toLocaleLowerCase()==='y'){
-          //console.log('Correct answer');
-          grade = grade + 5;
-          alert('Well done ' + userName + '! You have completed some of the game levels successfully. Your total score is ' + grade + ' Points.');
-        }else{
-          //console.log('Incorrect answer');
-          alert('Well done ' + userName + '! You have completed some of the game levels successfully. Your total score is ' + grade + ' Points.');
-        }
-      }
-    }else{
+      alert('Fantastic ' + userName +'! You have completed level ' + (i+1) + ' successfully! Your total score now is ' + grade + ' Points.');
       //console.log('Correct answer');
-      //grade = grade + 5;
-      answer = prompt('Well ' + userName +'! You could not complete level three successfully! Your total score now is ' + grade + ' Points. LEVEL FOUR: Is Julia my daughter\'s name? [yes] or [no]');
-      if(answer.toLocaleLowerCase()==='yes' || answer.toLocaleLowerCase()==='y'){
-        //console.log('Correct answer');
-        grade = grade + 5;
-        answer = prompt('Fantastic ' + userName +'! You have completed level four successfully! Your total score now is ' + grade + ' Points. LEVEL FIVE: Do i wear glasses? [yes] or [no]');
-        if(answer.toLocaleLowerCase()==='yes' || answer.toLocaleLowerCase()==='y'){
-          //console.log('Correct answer');
-          grade = grade + 5;
-          alert('Well ' + userName + '! You have completed some of the game levels successfully. Your total score is ' + grade + ' Points.');
-        }else{
-          //console.log('Incorrect answer');
-          alert('Well done ' + userName + '! You have completed some of the game levels successfully. Your total score is ' + grade + ' Points.');
-        }
-      }else{
-        //L4
-        answer = prompt('Oops ' + userName +'! You could not completed level four successfully! Your total score now is ' + grade + ' Points. LEVEL FIVE: Do i wear glasses? [yes] or [no]');
-        if(answer.toLocaleLowerCase()==='yes' || answer.toLocaleLowerCase()==='y'){
-          //console.log('Correct answer');
-          grade = grade + 5;
-          alert('Well done ' + userName + '! You have completed some of the game levels successfully. Your total score is ' + grade + ' Points.');
-        }else{
-          //console.log('Incorrect answer');
-          alert('Well done ' + userName + '! You have completed some of the game levels successfully. Your total score is ' + grade + ' Points.');
-        }
-      }
-    }
-  }
-}else{
-  //console.log('Incorrect answer');
-  //grade = grade + 5;
-  answer= prompt('Oops ' + userName +'! You could not complete level one successfully! Your total score now is ' + grade + ' Points. LEVEL TWO: I am a married man? [yes] or [no]');
-  if(answer.toLocaleLowerCase()==='yes' || answer.toLocaleLowerCase()==='y'){
-    //console.log('Correct answer');
-    grade = grade + 5;
-    answer = prompt('Fantastic ' + userName +'! You have completed level tow successfully! Your total score now is ' + grade + ' Points. LEVEL THREE: Do i have children? [yes] or [no]');
-    if(answer.toLocaleLowerCase()==='yes' || answer.toLocaleLowerCase()==='y'){
-      //console.log('Correct answer');
-      grade = grade + 5;
-      answer = prompt('Fantastic ' + userName +'! You have completed level three successfully! Your total score now is ' + grade + ' Points. LEVEL FOUR: Is Julia my daughter\'s name? [yes] or [no]');
-      if(answer.toLocaleLowerCase()==='yes' || answer.toLocaleLowerCase()==='y'){
-        //console.log('Correct answer');
-        grade = grade + 5;
-        answer = prompt('Fantastic ' + userName +'! You have completed level four successfully! Your total score now is ' + grade + ' Points. LEVEL FIVE: Do i wear glasses? [yes] or [no]');
-        if(answer.toLocaleLowerCase()==='yes' || answer.toLocaleLowerCase()==='y'){
-          //console.log('Correct answer');
-          grade = grade + 5;
-          alert('Good ' + userName + '! You have completed some of the game levels successfully. Your total score is ' + grade + ' Points.');
-        }else{
-          //console.log('Incorrect answer');
-          alert('Well done ' + userName + '! You have completed some of the game levels successfully. Your total score is ' + grade + ' Points.');
-        }
-      }else{
-        //L4
-        answer = prompt('Oops ' + userName +'! You could not completed level four successfully! Your total score now is ' + grade + ' Points. LEVEL FIVE: Do i wear glasses? [yes] or [no]');
-        if(answer.toLocaleLowerCase()==='yes' || answer.toLocaleLowerCase()==='y'){
-          //console.log('Correct answer');
-          grade = grade + 5;
-          alert('Well done ' + userName + '! You have completed some of the game levels successfully. Your total score is ' + grade + ' Points.');
-        }else{
-          //console.log('Incorrect answer');
-          alert('Well done ' + userName + '! You have completed some of the game levels successfully. Your total score is ' + grade + ' Points.');
-        }
-      }
-    }else{
+      break;
+
+    case 'no':
+    case 'n':
+      alert('Oops ' + userName +'! You could not completed level ' + (i+1) + ' successfully! Your total score now is ' + grade + ' Points.');
       //console.log('Incorrect answer');
-      //grade = grade + 5;
-      answer = prompt('Oops ' + userName +'! You could not complete level three successfully! Your total score now is ' + grade + ' Points. LEVEL FOUR: Is Julia my daughter\'s name? [yes] or [no]');
-      if(answer.toLocaleLowerCase()==='yes' || answer.toLocaleLowerCase()==='y'){
-        //console.log('Correct answer');
-        grade = grade + 5;
-        answer = prompt('Fantastic ' + userName +'! You have completed level four successfully! Your total score now is ' + grade + ' Points. LEVEL FIVE: Do i wear glasses? [yes] or [no]');
-        if(answer.toLocaleLowerCase()==='yes' || answer.toLocaleLowerCase()==='y'){
-          //console.log('Correct answer');
-          grade = grade + 5;
-          alert('Good ' + userName + '! You have completed some of the game levels successfully. Your total score is ' + grade + ' Points.');
-        }else{
-          //console.log('Incorrect answer');
-          alert('Well done ' + userName + '! You have completed some of the game levels successfully. Your total score is ' + grade + ' Points.');
-        }
-      }else{
-        //L4
-        answer = prompt('Oops ' + userName +'! You could not completed level four successfully! Your total score now is ' + grade + ' Points. LEVEL FIVE: Do i wear glasses? [yes] or [no]');
-        if(answer.toLocaleLowerCase()==='yes' || answer.toLocaleLowerCase()==='y'){
-          //console.log('Correct answer');
-          grade = grade + 5;
-          alert('Well done ' + userName + '! You have completed some of the game levels successfully. Your total score is ' + grade + ' Points.');
-        }else{
-          //console.log('Incorrect answer');
-          alert('Well done ' + userName + '! You have completed some of the game levels successfully. Your total score is ' + grade + ' Points.');
-        }
-      }
-    }
-  }else{
-    //console.log('Incorrect answer');
-    //grade = grade + 5;
-    answer = prompt('Oops ' + userName +'! You could not complete level tow successfully! Your total score now is ' + grade + ' Points. LEVEL THREE: Do i have children? [yes] or [no]');
-    if(answer.toLocaleLowerCase()==='yes' || answer.toLocaleLowerCase()==='y'){
-      //console.log('Correct answer');
-      grade = grade + 5;
-      answer = prompt('Fantastic ' + userName +'! You have completed level three successfully! Your total score now is ' + grade + ' Points. LEVEL FOUR: Is Julia my daughter\'s name? [yes] or [no]');
-      if(answer.toLocaleLowerCase()==='yes' || answer.toLocaleLowerCase()==='y'){
-        //console.log('Correct answer');
-        grade = grade + 5;
-        answer = prompt('Fantastic ' + userName +'! You have completed level four successfully! Your total score now is ' + grade + ' Points. LEVEL FIVE: Do i wear glasses? [yes] or [no]');
-        if(answer.toLocaleLowerCase()==='yes' || answer.toLocaleLowerCase()==='y'){
-          //console.log('Correct answer');
-          grade = grade + 5;
-          alert('Good ' + userName + '! You have completed some the game levels successfully. Your total score is ' + grade + ' Points.');
-        }else{
-          //console.log('Incorrect answer');
-          alert('Well ' + userName + '! You have completed some of the game levels successfully. Your total score is ' + grade + ' Points.');
-        }
-      }else{
-        //L4
-        answer = prompt('Oops ' + userName +'! You could not completed level four successfully! Your total score now is ' + grade + ' Points. LEVEL FIVE: Do i wear glasses? [yes] or [no]');
-        if(answer.toLocaleLowerCase()==='yes' || answer.toLocaleLowerCase()==='y'){
-          //console.log('Correct answer');
-          grade = grade + 5;
-          alert('Well done ' + userName + '! You have completed some of the game levels successfully. Your total score is ' + grade + ' Points.');
-        }else{
-          //console.log('Incorrect answer');
-          alert('Well done ' + userName + '! You have completed some of the game levels successfully. Your total score is ' + grade + ' Points.');
-        }
-      }
-    }else{
-      //console.log('Incorrect answer');
-      //grade = grade + 5;
-      answer = prompt('Fantastic ' + userName +'! You have completed level three successfully! Your total score now is ' + grade + ' Points. LEVEL FOUR: Is Julia my daughter\'s name? [yes] or [no]');
-      if(answer.toLocaleLowerCase()==='yes' || answer.toLocaleLowerCase()==='y'){
-        //console.log('Correct answer');
-        grade = grade + 5;
-        answer = prompt('Fantastic ' + userName +'! You have completed level four successfully! Your total score now is ' + grade + ' Points. LEVEL FIVE: Do i wear glasses? [yes] or [no]');
-        if(answer.toLocaleLowerCase()==='yes' || answer.toLocaleLowerCase()==='y'){
-          //console.log('Correct answer');
-          grade = grade + 5;
-          alert('Good ' + userName + '! You have completed some of the game levels successfully. Your total score is ' + grade + ' Points.');
-        }else{
-          //console.log('Incorrect answer');
-          alert('Well ' + userName + '! You have completed some of the game levels successfully. Your total score is ' + grade + ' Points.');
-        }
-      }else{
-        //L4
-        answer = prompt('Oops ' + userName +'! You could not completed level four successfully! Your total score now is ' + grade + ' Points. LEVEL FIVE: Do i wear glasses? [yes] or [no]');
-        if(answer.toLocaleLowerCase()==='yes' || answer.toLocaleLowerCase()==='y'){
-          //console.log('Correct answer');
-          grade = grade + 5;
-          alert('Well ' + userName + '! You have completed some of the game levels successfully. Your total score is ' + grade + ' Points.');
-        }else{
-          //console.log('Incorrect answer');
-          alert('Well ' + userName + '! You have completed some of the game levels successfully. Your total score is ' + grade + ' Points.');
-        }
-      }
+      break;
+
+    default:
+      alert('Please keep the answer to: \'yes\' or \'no\' or \'y\' or \'n\' only');
     }
   }
 }
+//Q6
+//let guessNumber=7;
+let j;
+for(j = 0; j<4;j++){
+  answer = prompt('Hello ' + userName +'! LEVEL ( 6 ): Try to guess my lucky number by picking a number between ( 1 and 10 ), NOTE THAT YOU HAVE ONLY ' + (4-j) + ' ATTEMPS');
+  switch(answer){
+  case '1':
+  case '2':
+  case '3':
+  case '4':
+  case '10':
+    alert('The number you picked is not even close to my lucky number!');
+    break;
+
+  case '5':
+  case '9':
+    alert('The number you picked is close to my lucky number!');
+    break;
+
+  case '6':
+  case '8':
+    alert('The number you picked is very close to my lucky number!');
+    break;
+
+  case '7':
+    grade = grade + 5;
+    alert('Fantastic ' + userName + '! The number you picked is my lucky number (7)! Your total score now is ' + grade + ' Points.');
+    j=5;
+    break;
+
+  default:
+    alert('Please pick a number from the range ( 1 to 10 ) only');
+  }
+
+}
+if(j===4){
+  alert('Oops ' + userName + '! You could not guess my lucky number (7)! Your total score now is ' + grade + ' Points.');
+}
+
+//Q7
+let k;
+let possibleAnswers =['blue', 'gray', 'black', 'red', 'green', 'yellow', 'white'];
+for(k = 0; k<6;k++){
+  answer = prompt('Hello ' + userName +'! LEVEL ( 7 ): If i would buy a car from my top-10 cars list, what color(s) would i like this car to be?, NOTE THAT YOU HAVE ONLY ' + (6-k) + ' ATTEMPS. Pick color(s) for this list: ' + possibleAnswers);
+
+  switch(answer){
+  case 'red':
+  case 'green':
+  case 'yellow':
+  case 'while':
+    alert('The color you picked is not my fav car color!');
+    break;
+
+  case 'blue':
+  case 'gray':
+  case 'black':
+    grade = grade + 5;
+    alert('Fantastic ' + userName + '! The color you picked is one of my fav car colors (blue, gray and black)! Your total score now is ' + grade + ' Points.');
+    k=7;
+    break;
+
+  default:
+    alert('Please pick a color from the list only');
+  }
+
+}
+if(k===7){
+  alert('Oops ' + userName + '! You could not guess any of the colors of my fav car (blue, gray and black)! Your total score now is ' + grade + ' Points.');
+}
+

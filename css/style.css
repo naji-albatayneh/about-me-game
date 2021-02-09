@@ -26,10 +26,16 @@ h4 {
     margin-left: 50px;
     margin-bottom: 20px;
 }
-main p {
+main ul li {
     text-align: left;
     font-size:large;
-    text-indent: 40px;
+    color:black;
+    background-color:wheat;
+    margin-bottom: 10px;
+}
+main ul {
+    text-align: left;
+    font-size:large;
     color:black;
     background-color:wheat;
     margin-top: 20px;
@@ -38,5 +44,23 @@ main p {
     margin-right: 50px;
     border: purple;
     border-width: medium;
-    
+}
+main ol li {
+    text-align: left;
+    font-size:large;
+    color:black;
+    background-color:wheat;
+    margin-bottom: 10px;
+}
+main ol {
+    text-align: left;
+    font-size:large;
+    color:black;
+    background-color:wheat;
+    margin-top: 20px;
+    margin-left: 50px;
+    margin-bottom: 50px;
+    margin-right: 50px;
+    border: purple;
+    border-width: medium;
 }
