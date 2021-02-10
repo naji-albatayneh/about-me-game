@@ -93,14 +93,15 @@ if(j===4){
 //Q7
 let k;
 let possibleAnswers =['blue', 'gray', 'black', 'red', 'green', 'yellow', 'white'];
+let correctAnswers =['blue', 'gray', 'black'];
 for(k = 0; k<6;k++){
-  answer = prompt('Hello ' + userName +'! LEVEL ( 7 ): If i would buy a car from my top-10 cars list, what color(s) would i like this car to be?, NOTE THAT YOU HAVE ONLY ' + (6-k) + ' ATTEMPS. Pick color(s) for this list: ' + possibleAnswers);
+  answer = prompt('Hello ' + userName +'! LEVEL ( 7 ): If i would buy a car from my top-10 cars list, what color(s) would i like this car to be?, NOTE THAT YOU HAVE ONLY ' + (6-k) + ' ATTEMPS. Pick color(s) for this list: ( ' + possibleAnswers + ' )');
 
-  switch(answer){
+  switch(answer.toLowerCase()){
   case 'red':
   case 'green':
   case 'yellow':
-  case 'while':
+  case 'white':
     //console.log('The color you picked is not my fav car color!');
     alert('The color you picked is not my fav car color!');
     break;
@@ -110,18 +111,18 @@ for(k = 0; k<6;k++){
   case 'black':
     grade = grade + 5;
     //console.log('The color you picked is one of my fav car colors (blue, gray and black)!');
-    alert('Fantastic ' + userName + '! The color you picked is one of my fav car colors (blue, gray and black)! Your total score now is ' + grade + ' Points.');
+    alert('Fantastic ' + userName + '! The color you picked is one of my fav car colors ( ' + correctAnswers + ' )! Your total score now is ' + grade + ' Points.');
     k=7;// To get out the loop
     break;
 
   default:
     //console.log('Please pick a color from the list only');
-    alert('Please pick a color from the list only');
+    alert('Please pick a color from the list of possible answers only ( ' + possibleAnswers + ' )');
   }
 
 }
 if(k===7){
   //console.log('You could not guess any of the colors of my fav car (blue, gray and black)!');
-  alert('Oops ' + userName + '! You could not guess any of the colors of my fav car (blue, gray and black)! Your total score now is ' + grade + ' Points.');
+  alert('Oops ' + userName + '! You could not guess any of the colors of my fav car ( ' + correctAnswers + ' )! Your total score now is ' + grade + ' Points.');
 }
 
