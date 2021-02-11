@@ -3,48 +3,53 @@ let grade = 0;
 let answer;
 let userName = prompt('Welcome to Guess Me Game! Each level you complete successfully you will get 5 points score. Please enter your NICKNAME to START the game.');
 let questions = ['Do i live in Amman?', 'I am a married man?', 'Do i have children?', 'Is Julia my daughter\'s name?', 'Do i wear glasses?'];
+let correct1 = ['yes', 'y'];
+let uncorrected = ['no', 'n'];
 //Q1-5
-for (let i = 0; i < questions.length; i++) {
-    answer = prompt('Hello ' + userName + '! LEVEL ( ' + (i + 1) + ' ): ' + questions[i] + ' [yes] or [no]');
-    if (i === 0) {
-        switch (answer.toLowerCase()) {
-            case 'no':
-            case 'n':
-                grade = grade + 5;
-                alert('Fantastic ' + userName + '! You have completed level ' + (i + 1) + ' successfully! Your total score now is ' + grade + ' Points.');
-                //console.log('Correct answer');
-                break;
+function questionnum1() {
+    for (let i = 0; i < questions.length; i++) {
+        answer = prompt('Hello ' + userName + '! LEVEL ( ' + (i + 1) + ' ): ' + questions[i] + ' [yes] or [no]');
+        if (i === 0) {
+            switch (answer.toLowerCase()) {
+                case uncorrected[0]:
+                case uncorrected[1]:
+                    grade = grade + 5;
+                    alert('Fantastic ' + userName + '! You have completed level ' + (i + 1) + ' successfully! Your total score now is ' + grade + ' Points.');
+                    //console.log('Correct answer');
+                    break;
 
-            case 'yes':
-            case 'y':
-                alert('Oops ' + userName + '! You could not completed level ' + (i + 1) + ' successfully! Your total score now is ' + grade + ' Points.');
-                //console.log('Incorrect answer');
-                break;
+                case correct1[0]:
+                case correct1[1]:
+                    alert('Oops ' + userName + '! You could not completed level ' + (i + 1) + ' successfully! Your total score now is ' + grade + ' Points.');
+                    //console.log('Incorrect answer');
+                    break;
 
-            default:
-                //console.log('Please keep the answer to: \'yes\' or \'no\' or \'y\' or \'n\' only');
-                alert('Please keep the answer to: \'yes\' or \'no\' or \'y\' or \'n\' only');
-        }
-    } else {
-        switch (answer.toLowerCase()) {
-            case 'yes':
-            case 'y':
-                grade = grade + 5;
-                alert('Fantastic ' + userName + '! You have completed level ' + (i + 1) + ' successfully! Your total score now is ' + grade + ' Points.');
-                //console.log('Correct answer');
-                break;
+                default:
+                    //console.log('Please keep the answer to: \'yes\' or \'no\' or \'y\' or \'n\' only');
+                    alert('Please keep the answer to: \'yes\' or \'no\' or \'y\' or \'n\' only');
+            }
+        } else {
+            switch (answer.toLowerCase()) {
+                case correct1[0]:
+                case correct1[1]:
+                    grade = grade + 5;
+                    alert('Fantastic ' + userName + '! You have completed level ' + (i + 1) + ' successfully! Your total score now is ' + grade + ' Points.');
+                    //console.log('Correct answer');
+                    break;
 
-            case 'no':
-            case 'n':
-                alert('Oops ' + userName + '! You could not completed level ' + (i + 1) + ' successfully! Your total score now is ' + grade + ' Points.');
-                //console.log('Incorrect answer');
-                break;
+                case uncorrected[0]:
+                case uncorrected[1]:
+                    alert('Oops ' + userName + '! You could not completed level ' + (i + 1) + ' successfully! Your total score now is ' + grade + ' Points.');
+                    //console.log('Incorrect answer');
+                    break;
 
-            default:
-                alert('Please keep the answer to: \'yes\' or \'no\' or \'y\' or \'n\' only');
+                default:
+                    alert('Please keep the answer to: \'yes\' or \'no\' or \'y\' or \'n\' only');
+            }
         }
     }
 }
+questionnum1();
 //Q6
 //let guessNumber=7;
 let questionsArray = ['Try to guess my lucky number by picking a number between ( 1 and 10 )', 'If i would buy a car from my top-10 cars list, what color(s) would i like this car to be?'];
